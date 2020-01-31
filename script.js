@@ -5,6 +5,7 @@ function onReady(){
 }
 
 let employeeRoster = [];
+let monthlyCost = 0;
 
 function submitEmployee(){
     console.log('in submit employee');
@@ -26,7 +27,13 @@ function submitEmployee(){
 
     console.log(employeeRoster);
     displayEmployees();
- 
+    calculateMonthlySalary();
+    let el = $('#monthlySalary');
+
+    el.empty();
+
+    el.append(`${monthlyCost}`);
+   
 }
 
 function displayEmployees () {
@@ -40,4 +47,14 @@ function displayEmployees () {
 
 
     
+}
+
+function calculateMonthlySalary (){
+    let tempCalc = 0;
+    for (let i = 0; i < employeeRoster.length; i++) {
+       tempCalc += (employeeRoster[i].annualSalary / 12)
+    }
+
+    monthlyCost = tempCalc;
+
 }
