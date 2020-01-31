@@ -15,11 +15,18 @@ function submitEmployee(){
         jobTitle: $('#jobTitleIn').val(),
         annualSalary: $('#annualSalaryIn').val()
     }
+
+    $('#firstNameIn').val( '' );
+    $('#lastNameIn').val( '' );
+    $('#idIn').val( '' );
+    $('#jobTitleIn').val( '' );
+    $('#annualSalaryIn').val( '' );
+
     employeeRoster.push(newEmployee);
 
     console.log(employeeRoster);
     displayEmployees();
-    
+ 
 }
 
 function displayEmployees () {
