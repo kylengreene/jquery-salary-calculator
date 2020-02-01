@@ -12,15 +12,29 @@
 <body>
     <input type="text" placeholder="Employee first name" id="firstNameIn">
     <input type="text" placeholder="Last name" id="lastNameIn">
-    <input type="text" placeholder="ID number" id="idIn">
+    <input type="number" placeholder="ID number" id="idIn">
     <input type="text" placeholder="Job title" id="jobTitleIn">
     <input type="number" placeholder="Annual salary" id="annualSalaryIn">
     <button id="submit">Submit</button>
 </body>
-<ul id="employeesOut">
 
-    
-</ul>
+<table>
+    <thead>
+    <tr>
+        <th>Employee first name</th>
+        <th>Last name</th>
+        <th>ID number</th>
+        <th>Job title</th>
+        <th>Annual salary</th>
+    </tr>
+    </thead>
+    <tbody id="employeesOut">
+
+
+    </tbody>
+
+   
+</table>
 
 <p>Monthly Total Salary: $<span id="monthlySalary"></p>
 </html>

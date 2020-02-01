@@ -1,7 +1,7 @@
 $('Document').ready(onReady);
 
 function onReady(){
-    $('#submit').on('click',submitEmployee);
+    $('#submit').on('click', submitEmployee);
 }
 
 let employeeRoster = [];
@@ -42,7 +42,14 @@ function displayEmployees () {
     el.empty();
 
     for (let i = 0; i < employeeRoster.length; i++){
-        el.append(`<li> ${employeeRoster[i].firstName} ${employeeRoster[i].lastName} : ${employeeRoster[i].idNumber}  ${employeeRoster[i].jobTitle} $${employeeRoster[i].annualSalary}`);
+        el.append(`
+        <tr>
+        <td>${employeeRoster[i].firstName}</td> 
+        <td>${employeeRoster[i].lastName}</td> 
+        <td>${employeeRoster[i].idNumber}</td> 
+        <td>${employeeRoster[i].jobTitle}</td>
+        <td>${employeeRoster[i].annualSalary}</td>
+        </tr>`);
     }
 
 
@@ -54,7 +61,5 @@ function calculateMonthlySalary (){
     for (let i = 0; i < employeeRoster.length; i++) {
        tempCalc += (employeeRoster[i].annualSalary / 12)
     }
-
     monthlyCost = tempCalc;
-
 }
