@@ -2,6 +2,7 @@ $('Document').ready(onReady);
 
 function onReady(){
     $('#submit').on('click', submitEmployee);
+    $('#employeesOut').on('click', '.item', deleteThis);
 }
 
 let employeeRoster = [];
@@ -49,7 +50,7 @@ function displayEmployees () {
         <td>${employeeRoster[i].idNumber}</td> 
         <td>${employeeRoster[i].jobTitle}</td>
         <td>${employeeRoster[i].annualSalary}</td>
-        <td><button id="delete">Delete</button></td>
+        <td class="item"><button class="delete">Delete</button></td>
         </tr>`);
     }
 
@@ -64,9 +65,15 @@ function calculateMonthlySalary (){
     }
     monthlyCost = tempCalc;
     if (monthlyCost > 20000) {
-        document.getElementById("monthlyTotalSalary").style.color = "red";
+        document.getElementById("monthlyTotalSalary").style.backgroundColor = "red";
     }
-    else {
-        document.getElementById("monthlyTotalSalary").style.color = "black";
-    }
+}
+
+function deleteThis() { 
+    console.log('in delete');
+    let el = $(this).parent();
+    console.log(el);
+    
+    el.remove();
+    
 }
