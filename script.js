@@ -49,6 +49,7 @@ function displayEmployees () {
         <td>${employeeRoster[i].idNumber}</td> 
         <td>${employeeRoster[i].jobTitle}</td>
         <td>${employeeRoster[i].annualSalary}</td>
+        <td><button id="delete">Delete</button></td>
         </tr>`);
     }
 
@@ -62,4 +63,10 @@ function calculateMonthlySalary (){
        tempCalc += (employeeRoster[i].annualSalary / 12)
     }
     monthlyCost = tempCalc;
+    if (monthlyCost > 20000) {
+        document.getElementById("monthlyTotalSalary").style.color = "red";
+    }
+    else {
+        document.getElementById("monthlyTotalSalary").style.color = "black";
+    }
 }
